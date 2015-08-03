@@ -3,5 +3,16 @@
 
 # looks like you don't need eval! where did I get that idea?
 
+
+# try piping:
 pwd | tr '[:lower:]' '[:upper:]'
+
+
+# try variables..
+
+# $() notation exectutes command (also backticks, but they're deprecated)
+
+Dir=$(pwd)
+
+echo $Dir
 
