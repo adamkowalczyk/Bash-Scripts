@@ -4,15 +4,22 @@
 # looks like you don't need eval! where did I get that idea?
 
 
+
 # try piping:
+echo 'pwd piped through tr:'
 pwd | tr '[:lower:]' '[:upper:]'
 
 
 # try variables..
+echo 'pwd dumped in a var and echoed:'
 
 # $() notation exectutes command (also backticks, but they're deprecated)
 
 Dir=$(pwd)
 
-echo $Dir
+echo $Dir 
+
+#play with stderr
+
+Err=$(foozle)
 
