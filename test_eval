@@ -1,0 +1,7 @@
+#!/bin/bash
+# Trying out executing commands in scripts
+
+# looks like you don't need eval! where did I get that idea?
+
+pwd | tr '[:lower:]' '[:upper:]'
+
