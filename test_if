@@ -3,12 +3,13 @@
 
 
 # -d flag checks for a directory
-if [ -d 'HAI' ]
+if [ -d 'HAI' ] # <- final space needed
 then
 	echo 'Directory HAI found'
 else
 	echo 'Else!'
 fi
+
 
 if [ ! -d 'THERE' ]
 then

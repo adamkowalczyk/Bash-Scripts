@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# testing:
+# 1) assigning stdout from a command to var
+# 2) testing it's existance
+# 3) using a regex to test validity
+# 4) perfrom a second operation of var is valid for use
