@@ -1,7 +1,27 @@
 #!/bin/bash
 
 # testing:
+# 0) take a command line arg
 # 1) assigning stdout from a command to var
 # 2) testing it's existance
 # 3) using a regex to test validity
-# 4) perfrom a second operation of var is valid for use
+# 4) perfom a second operation of var is valid for use
+
+
+# $1 is the first command line argument..
+Arg=$1
+
+# ls foo will return 'foo' if foo. just trying to get some stdout (or not)
+# use [] to only run ls if file exists
+Name=$([ -f $Arg ] && ls $Arg)
+
+
+# -z test if sting is null ( -n test is string is NOT null)
+# use double quotes on var to allow expansion 
+if [ -z "$Name" ]
+then
+	echo 'File not Found!'
+else
+	echo 'File Found!'
+	echo $Name | tr '[:lower:]' '[:upper:]'
+fi
