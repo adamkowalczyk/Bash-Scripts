@@ -1,7 +1,25 @@
 #!/bin/bash
 # testing conditionals
 
+
+# -d flag checks for a directory
 if [ -d 'HAI' ]
 then
 	echo 'Directory HAI found'
+else
+	echo 'Else!'
+fi
+
+if [ ! -d 'THERE' ]
+then
+	echo 'Directory THERE not found'
+else
+	echo 'Else!'
+fi
+
+if [ -d 'LEMON' ]
+then
+	echo 'LEMON!'
+else
+	echo 'Else! lemon not found'
 fi
