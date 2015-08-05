@@ -1,0 +1,13 @@
+#⁄/bin/bash
+
+# inspect a file for matching strings
+# using cat as I want to interact with stdout
+
+filename=$1
+
+
+# check if file a dir, 
+if [ ! -d $filename ]
+then
+	cat $filename | sed 's/.*\([0-9]\)/\1/' # do i need the quotes??
+fi
