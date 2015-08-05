@@ -1,26 +1,26 @@
 #!/bin/bash
-# testing conditionals
+
+# testing:
+# 0) take a command line arg
+# 1) assigning stdout from a command to var
+# 2) testing it's existance
+# 3) perfom a second operation with var 
 
 
-# -d flag checks for a directory
-if [ -d 'HAI' ] # <- final space needed
+# $1 is the first command line argument..
+Arg=$1
+
+# ls foo will return 'foo' if foo. just trying to get some stdout (or not)
+# use [] to only run ls if file exists
+Name=$([ -f $Arg ] && ls $Arg)
+
+
+# -z test if sting is null ( -n test is string is NOT null)
+# use double quotes on var to allow expansion 
+if [ -z "$Name" ]
 then
-	echo 'Directory HAI found'
+	echo 'File not Found!'
 else
-	echo 'Else!'
-fi
-
-
-if [ ! -d 'THERE' ]
-then
-	echo 'Directory THERE not found'
-else
-	echo 'Else!'
-fi
-
-if [ -d 'LEMON' ]
-then
-	echo 'LEMON!'
-else
-	echo 'Else! lemon not found'
+	echo 'File Found!'
+	echo $Name | tr '[:lower:]' '[:upper:]'
 fi
