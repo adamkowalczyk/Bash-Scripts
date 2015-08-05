@@ -3,7 +3,15 @@
 # try checking validity of some input
 # then do something with it
 
-# LEMON CHECKER
+search=$1
 
 # use glob (*) to look in dir - parsing ls is bad
 for file in *
+do
+	# check if file a dir, if not, grep contents for search term
+	if [ ! -d $file ] && grep -q $search $file
+	then
+		# concat file name to search results file
+		echo $file >> search_result.txt
+	fi
+done
