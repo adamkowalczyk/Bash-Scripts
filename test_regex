@@ -6,8 +6,9 @@
 filename=$1
 
 
-# check if file a dir, 
+# check file not a dir, 
 if [ ! -d $filename ]
 then
-	cat $filename | sed 's/.*\([0-9]\)/\1/' # do i need the quotes??
+	# read file, find 5 digit lines, remove *over* 5 digit lines, sed out extra chars
+	cat $filename | grep '[0-9]\{5\}' | grep -v '[0-9]\{6\}' | sed 's/.*\([0-9]\{5\}\).*/\1/'
 fi
