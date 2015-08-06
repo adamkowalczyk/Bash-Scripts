@@ -10,5 +10,10 @@ filename=$1
 if [ ! -d $filename ]
 then
 	# read file, find 5 digit lines, remove *over* 5 digit lines, sed out extra chars
-	cat $filename | grep '[0-9]\{5\}' | grep -v '[0-9]\{6\}' | sed 's/.*\([0-9]\{5\}\).*/\1/'
+	cat $filename | grep '[0-9]\{5\}' | grep -v '[0-9]\{6\}' |  sed 's/.*\([0-9]\{5\}\).*/\1/g'
 fi
+
+
+# NB sed is greedy, so in the above case, if there are multiple matces on one line, only the last one survives
+# soultion use a non greedy perl regex
+
