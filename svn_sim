@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# simulating a svn commit
+
+echo 'Transmiting file data'
+
+echo 'Updated to revision 35'
