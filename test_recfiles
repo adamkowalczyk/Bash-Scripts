@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# passing svn part of svn commit output to another command
+
+svn_sim | grep '[0-9]\{1,\}' | sed 's/.*\([0-9]\{1,\}\).*/\1/g'
