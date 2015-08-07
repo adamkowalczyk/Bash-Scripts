@@ -2,4 +2,11 @@
 
 # passing svn part of svn commit output to another command
 
-svn_sim | grep '[0-9]\{1,\}' | sed 's/[a-zA-Z|[:space:]]*\([0-9]\{1,\}\).*/\1/g'
+revNum=$(svn_sim | grep '[0-9]\{1,\}' | sed 's/[a-zA-Z|[:space:]]*\([0-9]\{1,\}\).*/\1/g')
+
+#read -e -p "Choose a flag! " Flag
+select Flag in "-f" "-d" "-v"
+do
+	recfiles_sim $revNum $Flag
+	break
+done

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# takes svn revision number and a flag as arguments
+
+rev=$1
+
+flag=$2
+
+# do stuff with args...
+
+#then
+echo "Submited rev $1 with flag $2"
