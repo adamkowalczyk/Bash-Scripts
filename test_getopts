@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# trying out getopts
+
+Flag='-f'
+
+while getopts ":f :d :v" opt
+do
+	case $opt in
+		f)
+			Flag='-f'
+			echo $Flag
+			;;
+		d)
+			Flag='-d'
+			echo $Flag
+			;;
+		v)
+			Flag='-v'
+			echo $Flag
+			;;
+		\?)
+			echo 'Invalid Flag'
+	esac
+done
