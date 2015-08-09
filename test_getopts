@@ -23,3 +23,8 @@ do
 			echo 'Invalid Flag'
 	esac
 done
+
+shift $((OPTIND-1))
+
+Arg=$1
+echo $Arg
