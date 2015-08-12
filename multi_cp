@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sourceFile=$1
+
+destination=$2
+
+if [ $1 == "-h"]; then
+	echo "Usage: multi_cp source_file destination_directories"
+	exit 0
+fi
