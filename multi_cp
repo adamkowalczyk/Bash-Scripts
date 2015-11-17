@@ -9,10 +9,10 @@ if [ $1 == "-h" ]; then
 	exit 0
 fi
 
-mkdir -p $destination
+#mkdir -p $destination
 
 
-for dir in ~/bin/*/ ; do
+for dir in $2 ; do
 	echo $dir
 done
 
