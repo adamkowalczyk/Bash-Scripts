@@ -1,0 +1,5 @@
+#!/bin/bash
+
+dropdb photocrowd
+
+heroku pg:pull DATABASE_URL photocrowd
